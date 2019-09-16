@@ -13,7 +13,7 @@ func TestSerialize(t *testing.T) {
 	tc := []struct {
 		Name      string
 		In        SerializeStruct
-		Out       string
+		Out       []byte
 		Sep       string
 		SepLevel2 string
 		ParamSep  string
@@ -23,14 +23,14 @@ func TestSerialize(t *testing.T) {
 			SerializeStruct{
 				Name:    "test",
 				Surname: "testSurname",
-				Price:   16.0,
+				Price:   16.00,
 				Parameters: []Parameters{
 					{Key: "TestParameter", Value: "ValueParameter"},
 					{Key: "TestParameter2", Value: "ValueParameter2"},
 					{Key: "TestParameter3", Value: "ValueParameter3"},
 				},
 			},
-			"test#testSurname#16.00#TestParameter##ValueParameter###TestParameter2##ValueParameter2###TestParameter3##ValueParameter3",
+			[]byte("test#testSurname#16#TestParameter##ValueParameter###TestParameter2##ValueParameter2###TestParameter3##ValueParameter3"),
 			"#",
 			"##",
 			"###",
