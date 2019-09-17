@@ -16,5 +16,6 @@ const VERSION = "1"
 func NewServer(addr string, port string) *server {
 	s := new(server)
 	s.version = VERSION
+	s.Addr = addr + ":" + port
 	return s
 }
