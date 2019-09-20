@@ -1,25 +1,26 @@
 package main
 
 import (
-	"github.com/go-chi/chi"
 	"log"
 
-	"github.com/arkiant/golab/api_production_grade/server"
+	"github.com/go-chi/chi"
+
 	"github.com/arkiant/golab/api_production_grade/routes"
+	"github.com/arkiant/golab/api_production_grade/server"
 )
 
 func main() {
-	
+
 	const (
-		address = "localhost"
+		address = "0.0.0.0"
 		port    = "5000"
 		version = "1"
 	)
 
 	// Routes
 	r := chi.NewRouter()
-	r.Route("/api/v"+version, func(r chi.Router){
-		r.Mount("/status", routes.Health() )
+	r.Route("/api/v"+version, func(r chi.Router) {
+		r.Mount("/status", routes.Health())
 	})
 
 	// Function log all routes in handler
