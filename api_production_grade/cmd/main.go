@@ -19,8 +19,10 @@ func main() {
 
 	// Routes
 	r := chi.NewRouter()
-	r.Route("/api/v"+version, func(r chi.Router) {
-		r.Mount("/status", routes.Health())
+	r.Route("/v"+version, func( r chi.Router){
+		r.Route("/api", func( r chi.Router){
+			r.Mount("/status", routes.Health())
+		})
 	})
 
 	// Function log all routes in handler
