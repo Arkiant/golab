@@ -21,7 +21,7 @@ func main() {
 	r := chi.NewRouter()
 	r.Route("/v"+version, func( r chi.Router){
 		r.Route("/api", func( r chi.Router){
-			r.Mount("/status", routes.Health())
+			r.Mount("/status", routes.HealthRoute())
 		})
 	})
 

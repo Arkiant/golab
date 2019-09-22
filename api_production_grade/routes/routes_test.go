@@ -7,6 +7,6 @@ import (
 )
 
 func TestHealth(t *testing.T) {
-	assert.HTTPSuccess(t, Health().ServeHTTP, "GET", "/health", nil)
-	assert.HTTPBodyContains(t, Health().ServeHTTP, "GET", "/health", nil, "OK")
+	assert.HTTPSuccess(t, HealthRoute().ServeHTTP, "GET", "/health", nil)
+	assert.HTTPBodyContains(t, HealthRoute().ServeHTTP, "GET", "/health", nil, "{\"message\":\"OK\"}")
 }

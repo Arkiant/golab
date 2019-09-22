@@ -4,6 +4,7 @@ go 1.12
 
 require (
 	github.com/go-chi/chi v4.0.2+incompatible
+	github.com/go-chi/render v1.0.1
 	github.com/google/pprof v0.0.0-20190908185732-236ed259b199 // indirect
 	github.com/ianlancetaylor/demangle v0.0.0-20181102032728-5e5cf60278f6 // indirect
 	github.com/stretchr/objx v0.2.0 // indirect
