@@ -15,10 +15,6 @@ func (h *handler) HealthRoutes() *chi.Mux {
 
 func (h *handler) health(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
-	response := health{Message: "OK"}
+	response := h.HealthCheck()
 	render.JSON(w, r, response)
-}
-
-type health struct {
-	Message string `json:"message"`
 }
