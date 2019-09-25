@@ -3,9 +3,12 @@ package main
 import (
 	"log"
 
+	"github.com/arkiant/golab/api_production_grade/api/handler"
+
+	"github.com/arkiant/golab/api_production_grade/api/service"
+
 	"github.com/go-chi/chi"
 
-	"github.com/arkiant/golab/api_production_grade/routes"
 	"github.com/arkiant/golab/api_production_grade/server"
 )
 
@@ -17,21 +20,16 @@ func main() {
 		version = "1"
 	)
 
-	// Routes
-	r := chi.NewRouter()
-	r.Route("/v"+version, func( r chi.Router){
-		r.Route("/api", func( r chi.Router){
-			r.Mount("/status", routes.HealthRoute())
-		})
-	})
+	s := service.NewService(nil)
+	routes := handler.NewHandler(s)
 
 	// Function log all routes in handler
-	if err := chi.Walk(r, server.WalkFunc); err != nil {
+	if err := chi.Walk(routes, server.WalkFunc); err != nil {
 		log.Fatalf("Walk error: %v\n", err)
 	}
 
 	// Create a new server
-	srv, err := server.NewServer(address, port, r)
+	srv, err := server.NewServer(address, port, routes)
 	if err != nil {
 		log.Fatalf("Error creating server: %v", err)
 	}
