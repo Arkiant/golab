@@ -4,9 +4,9 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/arkiant/golab/api_production_grade/api/handler"
+	"github.com/arkiant/golab/api_production_grade/handler"
 
-	"github.com/arkiant/golab/api_production_grade/api/service"
+	"github.com/arkiant/golab/api_production_grade/service"
 
 	"github.com/go-chi/chi"
 )

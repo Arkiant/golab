@@ -8,7 +8,7 @@ COPY . .
 
 RUN go mod download
 
-RUN cd api/cmd/ && CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main .
+RUN cd cmd/ && CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main .
 
 ######## Start a new stage from scratch #######
 
@@ -18,7 +18,7 @@ RUN apk --no-cache add ca-certificates
 
 WORKDIR /root/
 
-COPY --from=builder /app/api/cmd/main .
+COPY --from=builder /app/cmd/main .
 
 EXPOSE 5000
 

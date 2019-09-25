@@ -1,7 +1,7 @@
 package service
 
 import (
-	"github.com/arkiant/golab/api_production_grade/api/models"
+	"github.com/arkiant/golab/api_production_grade/models"
 )
 
 // HealthCheck Check health API

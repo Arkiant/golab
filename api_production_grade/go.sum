@@ -1,5 +1,6 @@
 github.com/arkiant/golab v0.0.0-20190919141429-7fedd49c3f11 h1:tdBhHwdv1f8uqfTidbhQfhpZgb6/XDWdKnktDC27KSY=
 github.com/arkiant/golab v0.0.0-20190925104806-5b22615ea461 h1:kwsqUxQiyL2i8wGs/xUKvooB5+CUzwil29Mx6cL2TeM=
+github.com/arkiant/golab v0.0.0-20190925152715-6e40ada7a7f4 h1:iBfB9FYVlvFoKrPJX30o5TF/eovFa//wIrXPE0YceyY=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=

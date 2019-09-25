@@ -3,7 +3,7 @@ package handler
 import (
 	"testing"
 
-	"github.com/arkiant/golab/api_production_grade/api/service"
+	"github.com/arkiant/golab/api_production_grade/service"
 	"github.com/stretchr/testify/assert"
 )
 

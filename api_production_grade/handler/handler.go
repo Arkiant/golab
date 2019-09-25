@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"github.com/arkiant/golab/api_production_grade/api/service"
+	"github.com/arkiant/golab/api_production_grade/service"
 	"github.com/go-chi/chi"
 )
 
