@@ -9,7 +9,7 @@ import (
 
 func TestHealth(t *testing.T) {
 
-	s := service.NewService(nil)
+	s := service.NewService(nil, "1")
 	h := NewHandler(s)
 
 	assert.HTTPSuccess(t, h.ServeHTTP, "GET", "/v1/api/status/health", nil)

@@ -21,7 +21,7 @@ func NewHandler(s *service.Service) *chi.Mux {
 
 	// Base api convention
 	r := chi.NewRouter()
-	r.Route("/v1", func(r chi.Router) {
+	r.Route("/v"+h.Version(), func(r chi.Router) {
 		r.Route("/api", func(r chi.Router) {
 			r.Mount("/", api)
 		})

@@ -1,5 +1,13 @@
 # Production grade API test
 
+## Structure
+
+- api: Microservice code
+    - handler: Rest Interface
+    - service: Business Logic
+    - cmd: Initializer and binary
+    - models: Business models
+
 ## Docker build command
 
 ```
