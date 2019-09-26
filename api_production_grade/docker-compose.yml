@@ -1,0 +1,28 @@
+version: '3'
+services:
+  api:
+    image: api_production_grade
+    ports: 
+      - "5000:5000"
+    links:
+      - cache
+      - database
+    networks:
+      - frontend
+      - backend
+  cache:
+    image: redis:alpine
+    ports:
+      - "6379"
+    networks:
+      - backend
+  database:
+    image: postgres:latest
+    networks:
+      - backend
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
+    internal: true
