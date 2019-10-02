@@ -1,0 +1,21 @@
+version: '3'
+
+# GUIDE https://jonnev.se/traefik-with-docker-and-lets-encrypt/
+services:
+  reverse-proxy:
+    image: traefik:v2.0
+    command: --providers.docker --configFile=/traefik.toml
+    ports:
+      # The HTTP port
+      - "80:80"
+      # The HTTPs port
+      - "443:443"
+    volumes:
+      # So that Traefik can listen to the Docker events
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /opt/traefik/traefik.toml:/traefik.toml
+      - /opt/traefik/acme.json:/acme.json
+    labels:
+      - "traefik.enable=true"
+      - "traefik.frontend.rule=Host:example.com"
+      - "traefik.port=9000"
